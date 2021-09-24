@@ -1,0 +1,52 @@
+
+
+@import './theme.less';
+
+// 滚动条设置
+html {
+	// overflow-y: scroll;
+  scrollbar-width: none; // firefox浏览器隐藏滚动条
+  -ms-overflow-style: none; //IE和Edge浏览器隐藏滚动条
+	::-webkit-scrollbar {
+		display: none;
+	}
+	body {
+		font-family: PingFangSC-Regular, PingFang SC, Microsoft YaHei, Verdana, Simsun;
+		font-weight: 400;
+		font-size: 16px;
+		width: 100% !important;
+		background: @white;
+	}
+}
+
+.scrollbar-thin-box {
+  scrollbar-width: thin;
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background: @line-color;
+    display: block;
+  }
+  /*定义滚动条轨道 内阴影+圆角*/
+  &::-webkit-scrollbar-track {
+    background-color: @line-color;
+  }
+  /*定义滑块 内阴影+圆角*/
+  &::-webkit-scrollbar-thumb {
+    background-color: @line-color-hight;
+    border: 1px solid @line-color;
+    &:hover {
+      background-color: @text-color-secondary;
+    }
+  }
+}
+
+// vue过渡效果
+.component-fade-enter-active,
+.component-fade-leave-active {
+	transition: opacity 0.3s ease;
+}
+.component-fade-enter, .component-fade-leave-to
+/* .component-fade-leave-active for below version 2.1.8 */ {
+	opacity: 0;
+}
